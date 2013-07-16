@@ -12,9 +12,6 @@
     "require": {
         "cedriclombardot/admingenerator-generator-bundle": "*"
     },
-    "conflict": {
-        "genemu/form-bundle": "*"
-    },
     "suggest": {
         "liip/imagine-bundle": "Apply filters on preview images"
     },
