@@ -1,13 +1,8 @@
-<div class="double-list-label">{{ 'double_list.selected'|trans({}, 'AvocodeFormExtensions') }}</div>
-
-<ul id="{{ id }}_selected" class="double-list-dropdown dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+<div class="double_list_label">{% trans from "Admingenerator" %}double_list.selected{% endtrans %}</div>
+<select name="{{ form.parent.vars.id }}[{{ form.vars.name }}][]" multiple="true" id="{{ id }}_selected" class="double_list_select-selected">
 {% for choice in choices %}
     {% if choice is selectedchoice(value) %}
-    <li data-value="{{ choice.value }}">
-        <a tabindex="-1" href="#">
-            <i class="icon-ok"></i> {{ choice.label }}
-        </a>
-    </li>
+        <option value="{{ choice.value }}">{{ choice.label }}</option>
     {% endif %}
 {% endfor %}
-</ul>
+</select>

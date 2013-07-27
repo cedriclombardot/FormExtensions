@@ -166,29 +166,31 @@
 
 {% block double_list_prototype %}
 {% spaceless %}
-    <div id="{{ id ~ '_widget_container' }}" class="double-list">
-        <div class="list-unselected dropdown open">
+    <script type="text/javascript" src="{{ asset('bundles/admingeneratorgenerator/javascripts/double_list.js') }}"></script>
+    <div class="double_list">
+        <div style="float: left">
             {% include "AvocodeFormExtensionsBundle:Form/DoubleList:unselected_list.html.twig" %}
         </div>
-        <div class="list-controls">
+        <div style="float: left; margin-top: 2em">
             {% include "AvocodeFormExtensionsBundle:Form/DoubleList:controls.html.twig" %}
         </div>
-        <div class="list-selected dropdown open">
+        <div style="float: left">
             {% include "AvocodeFormExtensionsBundle:Form/DoubleList:selected_list.html.twig" %}
         </div>
-        {{ block('choice_widget') }}
+        <br style="clear: both" />
+        {% include "AvocodeFormExtensionsBundle:Form/DoubleList:javascripts.html.twig" %}
     </div>
 {% endspaceless %}
 {% endblock double_list_prototype %}
-    
+
 {% block double_list_document_widget %}
     {{ block('double_list_prototype') }}
 {% endblock double_list_document_widget %}
-    
+
 {% block double_list_entity_widget %}
     {{ block('double_list_prototype') }}
 {% endblock double_list_entity_widget %}
-    
+
 {% block double_list_model_widget %}
     {{ block('double_list_prototype') }}
 {% endblock double_list_model_widget %}
