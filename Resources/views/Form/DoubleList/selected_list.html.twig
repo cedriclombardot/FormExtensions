@@ -1,4 +1,4 @@
-<div class="double_list_label">{% trans from "Admingenerator" %}double_list.selected{% endtrans %}</div>
+<div class="double_list_label">{% trans from "AvocodeFormExtensions" %}double_list.selected{% endtrans %}</div>
 <select name="{{ form.parent.vars.id }}[{{ form.vars.name }}][]" multiple="true" id="{{ id }}_selected" class="double_list_select-selected">
 {% for choice in choices %}
     {% if choice is selectedchoice(value) %}
